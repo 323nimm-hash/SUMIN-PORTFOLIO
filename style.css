@@ -1,0 +1,467 @@
+/* 기본 설정 */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #111;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* 공통 레이아웃 */
+.inner{
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section{
+    padding: 88px 0;
+}
+
+.section-title{
+    font-size: 16px;
+    font-weight: 1000;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+/* HEADER */
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.site-header .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.header-line {
+    border: none;
+    border-bottom: 1px solid #e5e5e5;  /* 연한 회색 선 */
+    margin: 0;                         /* 위아래 여백 제거 */
+}
+
+.logo{
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.main-nav{
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.main-nav a.active::after,
+.main-nav a:hover::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
+
+/* HERO NAME SECTION */
+.hero-name-section .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 20px;
+    margin-bottom: -120px;
+}
+
+/* 큰 이름 */
+.big-name {
+    font-size: 8rem;        /* 엄청 크게! */
+    font-weight: 2000;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -5px;    /* 더 세련되게 */
+}
+
+/* INTRO */
+.intro{
+    padding: 0px;
+}
+/*수정03*/
+.intro p{
+    font-size: 32px;
+    font-weight: 400;
+    max-width: 1120px;
+}
+
+/* CURRENT EXHIBITION 수정01*/
+.current-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3개 가로 정렬 */
+    gap: 40px;
+}
+
+
+/*수정02.current-item .image-wrap{
+    background-color: #f5f5f5;
+    overflow: hidden;
+}*/
+
+.current-item .image-wrap{
+    background-color: #f5f5f5;
+    overflow: hidden;
+    aspect-ratio: 4 / 4;   /* 비율 고정 (예: 4:3) */
+    border-radius: 24px
+}
+
+/* 현재 공통 img 설정을 덮어쓰기 */
+.current-item .image-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* 이미지 꽉 채우기, 비율 유지하면서 잘라냄 */
+    display: block;
+}
+
+
+.caption{
+    font-size: 12px;
+    margin-top: 8px;
+    color: #555;
+}
+
+.caption-right{
+    text-align: right;
+}
+
+.caption-right a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #000;
+}
+
+.caption p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+
+    /* 🔥 자간 */
+    letter-spacing: -0.5px;
+
+    /* 🔥 줄 간격(= 다음 줄과 간격) */
+    line-height: 1.1;
+    
+}
+
+.caption p:last-child {
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+
+    /* 🔥 자간 */
+    letter-spacing: 0.2px;
+
+    /* 🔥 줄 간격 */
+    line-height: 1.4;
+
+    margin-top: -8px; /* 첫 줄과 간격 미세 조정 */
+}
+
+
+/* PAST EXHIBITION 메인 */
+.past-main{
+    background-color: #000;
+    margin-top: 12px;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.past-title{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.past-main-image{
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* PAST EXHIBITION 하단 그리드 */
+.past-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.past-item .image-wrap{
+    background-color: #f5f5f5;
+    border-radius: 40px
+}
+
+/* ABOUT 섹션 */
+.section-about{
+    padding-bottom: 80px;
+}
+
+.about-layout{
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.about-button{
+    border: 1px solid #000;
+    background: transparent;
+    border-radius: 200px;
+    padding: 6px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: all 0.25s ease;   /* 부드러운 애니메이션 */
+    
+}
+
+.about-button:hover {
+    background: #000;      /* 검정 배경 */
+    color: #fff;           /* 흰색 텍스트 */
+    border-color: #000;    /* 테두리도 검정 유지 */
+    transform: translateY(-2px);  /* 아주 살짝 위로 떠오르는 효과 */
+}
+
+.about-info{
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.about-hours{
+    margin-top: 16px;
+}
+
+.about-image{
+    background-color: #f5f5f5;
+}
+
+.about-image-wrap {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;   /* 오른쪽으로 밀기 */
+}
+
+.about-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* FOOTER */
+.site-footer{
+    border-top: 1px solid #eee;
+    padding: 16px 0;
+    font-size: 11px;
+}
+
+.site-footer .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.to-top{
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+/*수정*/
+/* PROJECTS GRID */
+/*.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+*/
+
+.project-item{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-item img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+}
+
+/*추가*/
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+
+/* PROJECT TEXT */
+.project-info {
+    margin-top: 12px;
+}
+
+.project-name {
+    font-size: 24px;      /* ← 프로젝트 제목 크기 조절 */
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+    letter-spacing: -0.3px;
+}
+
+.project-desc {
+    font-size: 18px;      /* ← 프로젝트 설명 크기 조절 */
+    font-weight: 300;
+    margin-top: 4px;
+    color: #777;
+    letter-spacing: 0.2px;
+}
+
+
+/*.project-item{
+    width: 100%;
+    aspect-ratio: 1 / 1;  정사각형 
+    overflow: hidden;
+    background-color: #eee;}
+    */
+
+/*.project-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+*/
+
+/* 반응형 */
+@media (max-width: 900px){
+    .intro p{
+        font-size: 17px;
+    }
+
+    .current-grid,
+    .past-grid,
+    .about-layout{
+        grid-template-columns: 1fr;
+    }
+
+    .caption-right{
+        text-align: left;
+    }
+
+    .site-header .inner{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        height: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+@media (max-width: 600px){
+    .inner{
+        padding: 0 16px;
+    }
+
+    .intro{
+        padding-top: 56px;
+    }
+
+    .logo{
+        font-size: 24px;
+    }
+}
+@media (max-width: 900px){
+    .projects-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+    .projects-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 버튼 그룹 */
+.tag-buttons a {
+    padding: 10px 28px;
+    border: 1.8px solid #111;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none; /* 밑줄 제거 */
+    color: #111;           /* 기본 글자색 */
+    display: inline-block; /* padding 적용을 위해 필요 */
+}
+
+.tag-buttons a:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* intro 정렬 */
+.intro .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 이미지 hover 효과 공통 */
+.current-item .image-wrap img,
+.project-item img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+/* hover 시 확대 + 살짝 어둡게 */
+.current-item:hover img,
+.project-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.92);
+}
